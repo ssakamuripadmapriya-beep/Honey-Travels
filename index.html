@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Honey Travels</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f4f7fb;
+overflow-x:hidden;
+color:#0f172a;
+}
+
+/* NAVBAR */
+
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:10px 7%;   /* 👈 reduced height */
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:white;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,0.06);
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+color:#0f172a;
+}
+
+.logo span{
+color:#ff9800;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-size:15px;
+font-weight:600;
+color:#475569;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ff9800;
+}
+
+/* HERO */
+
+.hero{
+min-height:75vh;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+padding:80px 7% 50px;
+position:relative;
+overflow:hidden;
+gap:100px;
+
+background:url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D") center/cover no-repeat;
+
+position:relative;
+overflow:hidden;
+}
+.hero::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:1;
+}
+.hero .hero-desc{
+  color:#ffffff !important;
+  font-size:14px;
+  line-height:2;
+  max-width:500px;
+  text-shadow:0 3px 15px rgba(0,0,0,0.8);
+  opacity:1 !important;
+}
+.hero-text,
+.hero-image{
+  position:relative;
+  z-index:2;
+}
+/* ANIMATION */
+
+.hero::before{
+content:'';
+position:absolute;
+width:700px;
+height:700px;
+background:
+radial-gradient(circle,
+rgba(255,152,0,0.18),
+transparent 70%);
+top:-250px;
+right:-150px;
+animation:moveGlow 8s infinite alternate;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:
+radial-gradient(circle,
+rgba(37,99,235,0.15),
+transparent 70%);
+bottom:-200px;
+left:-120px;
+animation:moveGlow2 10s infinite alternate;
+}
+
+@keyframes moveGlow{
+
+0%{
+transform:translateY(0px);
+}
+
+100%{
+transform:translateY(60px);
+}
+
+}
+
+@keyframes moveGlow2{
+
+0%{
+transform:translateX(0px);
+}
+
+100%{
+transform:translateX(60px);
+}
+
+}
+
+/* LEFT CONTENT */
+
+.hero-text{
+position:relative;
+z-index:2;
+}
+
+.tag{
+display:inline-block;
+padding:10px 22px;
+background:#fff4e5;
+color:#ff9800;
+border-radius:50px;
+font-size:14px;
+font-weight:700;
+margin-bottom:25px;
+}
+
+.hero-text h1{
+font-size:82px;
+line-height:1.05;
+font-weight:800;
+margin-bottom:25px;
+
+/* NEW LUXURY COLOR */
+color:#ffffff;
+
+/* GLOW EFFECT */
+text-shadow:
+0 0 10px rgba(255,255,255,0.6),
+0 0 20px rgba(37,99,235,0.6),
+0 0 40px rgba(37,99,235,0.4);
+
+/* ANIMATION */
+animation:glowText 2.5s ease-in-out infinite alternate;
+}
+
+.hero-text h1 span{
+color:#2563eb;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:2;
+color:#475569;
+margin-bottom:35px;
+max-width:600px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:0.4s;
+font-size:15px;
+}
+
+.btn1{
+background:#ff9800;
+color:white;
+box-shadow:0 10px 25px rgba(255,152,0,0.35);
+}
+
+.btn1:hover{
+transform:translateY(-5px);
+}
+
+.btn2{
+background:white;
+color:#0f172a;
+border:1px solid #dbe4f0;
+}
+
+.btn2:hover{
+background:#2563eb;
+color:white;
+}
+
+/* HERO IMAGE */
+
+.hero-image{
+position:relative;
+z-index:2;
+}
+
+.hero-image img{
+width:100%;
+animation:carFloat 4s ease-in-out infinite;
+filter:
+drop-shadow(0 30px 40px rgba(0,0,0,0.18));
+}
+
+@keyframes carFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* STATS */
+
+.stats{
+padding:40px 7%;
+background:#0f172a;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:25px;
+}
+
+.stat-box{
+text-align:center;
+color:white;
+}
+
+.stat-box h2{
+font-size:42px;
+color:#ff9800;
+margin-bottom:10px;
+}
+
+.stat-box p{
+font-size:15px;
+color:#cbd5e1;
+}
+
+/* SECTION */
+
+.section{
+padding:80px 7%;
+}
+
+.section-title{
+text-align:center;
+font-size:50px;
+font-weight:800;
+margin-bottom:20px;
+color:#0f172a;
+}
+
+.section-sub{
+text-align:center;
+font-size:16px;
+color:#64748b;
+margin-bottom:60px;
+}
+
+/* CARS */
+
+.cars{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+gap:90px;
+max-width:1190px;
+margin:auto;
+}
+
+.card{
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+transition:0.4s;
+position:relative;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:230px;
+object-fit:cover;
+object-position: center;
+}
+
+.card-content{
+padding:25px;
+}
+
+.price{
+position:absolute;
+top:18px;
+right:18px;
+background:#ff9800;
+color:white;
+padding:10px 16px;
+border-radius:12px;
+font-weight:700;
+}
+
+.card-content h3{
+font-size:28px;
+margin-bottom:10px;
+color:#0f172a;
+}
+
+.card-content p{
+font-size:15px;
+line-height:1.9;
+color:#64748b;
+margin-bottom:15px;
+}
+
+.car-info{
+display:flex;
+justify-content:space-between;
+margin-bottom:20px;
+font-size:14px;
+color:#475569;
+}
+
+.book-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+background:#2563eb;
+color:white;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.book-btn:hover{
+background:#0f172a;
+}
+
+/* FEEDBACK */
+
+.feedback-container{
+display:flex;
+flex-direction:column;
+gap:25px;
+max-height:500px;
+overflow-y:auto;
+padding-right:10px;
+}
+
+.feedback-card{
+background:white;
+padding:25px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+position:relative;
+}
+
+.feedback-card h3{
+color:#ffb400;
+font-size:24px;
+margin-bottom:10px;
+}
+
+.feedback-card p{
+line-height:1.8;
+color:#475569;
+}
+
+.feedback-card h4{
+margin-top:15px;
+color:#2563eb;
+}
+
+.menu-btn{
+position:absolute;
+top:20px;
+right:20px;
+background:none;
+border:none;
+font-size:22px;
+cursor:pointer;
+}
+
+.menu-box{
+display:none;
+position:absolute;
+top:50px;
+right:20px;
+background:white;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.12);
+padding:10px;
+}
+
+.menu-box button{
+border:none;
+background:none;
+cursor:pointer;
+font-weight:600;
+color:red;
+}
+
+.feedback-card.active .menu-box{
+display:block;
+}
+
+/* FORM */
+
+.feedback-form{
+margin-top:50px;
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.feedback-form input,
+.feedback-form textarea{
+width:100%;
+padding:18px;
+margin-bottom:20px;
+border:none;
+background:#f1f5f9;
+border-radius:16px;
+font-size:15px;
+}
+
+.feedback-form textarea{
+height:160px;
+resize:none;
+}
+
+.star-rating{
+display:flex;
+gap:10px;
+font-size:32px;
+margin-bottom:25px;
+cursor:pointer;
+color:#cbd5e1;
+}
+
+.star-rating .active{
+color:#ffb400;
+}
+
+/* CONTACT */
+
+.contact{
+background:#0f172a;
+color:white;
+padding:100px 7%;
+}
+
+.contact-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.contact-info h2{
+font-size:50px;
+margin-bottom:25px;
+}
+
+.contact-info p{
+font-size:17px;
+line-height:2;
+color:#cbd5e1;
+}
+
+.contact-info i{
+color:#ff9800;
+margin-right:10px;
+}
+
+iframe{
+width:100%;
+height:350px;
+border:none;
+border-radius:30px;
+}
+
+/* FOOTER */
+@keyframes glowText{
+0%{
+text-shadow:
+0 0 10px rgba(255,255,255,0.4),
+0 0 20px rgba(37,99,235,0.4);
+transform:translateY(0px);
+}
+
+100%{
+text-shadow:
+0 0 15px rgba(255,255,255,0.8),
+0 0 30px rgba(37,99,235,0.8),
+0 0 50px rgba(37,99,235,0.6);
+transform:translateY(-3px);
+}
+}
+footer{
+background:#020617;
+padding:22px;
+text-align:center;
+color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+min-height:90vh;
+padding:100px 7% 60px;
+}
+
+.hero-text h1{
+font-size:55px;
+}
+.welcome-title{
+  font-size:28px;
+  color:#ffffff;
+  margin-bottom:10px;
+  text-shadow:0 3px 10px rgba(0,0,0,0.6);
+}
+
+.welcome-desc{
+  font-size:16px;
+  color:#ffffff;
+  line-height:1.8;
+  max-width:500px;
+  opacity:0.9;
+  text-shadow:0 3px 10px rgba(0,0,0,0.6);
+}
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.cars{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px;
+  max-width:1200px;
+  margin:auto;
+  padding:0 7%;
+}
+
+.contact-box{
+grid-template-columns:1fr;
+}
+
+}
+
+.stats{
+  margin-bottom:70px;
+}
+
+.section{
+  padding-top:80px;
+}
+div{
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+.book-title,
+.book-sub{
+  margin-left:auto;
+  margin-right:auto;
+  max-width:800px;
+}
+
+.book-sub{
+  text-align:center;
+  font-size:16px;
+  color:#64748b;
+  margin-bottom:30px;
+}
+#carsSection{
+  scroll-margin-top:100px;
+}
+
+/* PREMIUM LUXURY BACKGROUND */
+
+.luxury-bg{
+position:fixed;
+top:-200px;
+left:-200px;
+width:700px;
+height:700px;
+
+background:
+radial-gradient(circle,
+rgba(3, 134, 221, 0.18),
+transparent 70%);
+
+filter:blur(40px);
+
+animation:moveBg1 12s ease-in-out infinite alternate;
+
+z-index:-1;
+}
+
+.luxury-bg2{
+position:fixed;
+bottom:-250px;
+right:-200px;
+width:700px;
+height:700px;
+
+background:
+radial-gradient(circle,
+rgba(231, 70, 6, 0.18)
+transparent 70%);
+
+filter:blur(50px);
+
+animation:moveBg2 15s ease-in-out infinite alternate;
+
+z-index:-1;
+}
+
+/* HEADLIGHT EFFECT */
+
+.headlight{
+position:absolute;
+top:45%;
+width:500px;
+height:180px;
+
+background:
+linear-gradient(
+90deg,
+rgba(25, 15, 168, 0.65)
+rgba(143, 5, 5, 0)
+);
+
+filter:blur(35px);
+
+z-index:1;
+
+animation:lightMove 3s ease-in-out infinite alternate;
+opacity:0.6;
+}
+
+.left-light{
+left:-120px;
+transform:rotate(-8deg);
+}
+
+.right-light{
+right:-120px;
+transform:rotate(188deg);
+}
+
+/* ANIMATION */
+
+@keyframes lightMove{
+
+0%{
+transform:translateX(0px) scaleX(1);
+opacity:0.4;
+}
+
+100%{
+transform:translateX(40px) scaleX(1.1);
+opacity:0.8;
+}
+
+}
+/* ================= MOBILE VIEW ================= */
+
+@media(max-width:768px){
+
+nav{
+padding:12px 5%;
+flex-direction:column;
+gap:10px;
+}
+
+.logo{
+font-size:28px;
+text-align:center;
+line-height:1.2;
+}
+
+.nav-links{
+gap:18px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.nav-links a{
+font-size:14px;
+}
+
+.hero{
+grid-template-columns:1fr;
+padding:140px 5% 60px;
+text-align:center;
+min-height:100vh;
+gap:30px;
+background-position:center;
+}
+
+.hero-text h1{
+font-size:52px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero-desc{
+font-size:16px !important;
+line-height:1.8 !important;
+max-width:100%;
+}
+
+.hero-buttons{
+justify-content:center;
+gap:15px;
+}
+
+.btn{
+padding:14px 28px;
+font-size:14px;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+padding:30px 5%;
+gap:20px;
+}
+
+.stat-box h2{
+font-size:32px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.section-sub{
+font-size:14px;
+margin-bottom:35px;
+padding:0 10px;
+}
+
+.cars{
+grid-template-columns:1fr;
+gap:25px;
+padding:0 5%;
+}
+
+.card img{
+height:220px;
+}
+
+.card-content h3{
+font-size:24px;
+}
+
+.feedback-form{
+padding:25px;
+}
+
+.contact{
+padding:70px 5%;
+}
+
+.contact-box{
+grid-template-columns:1fr;
+}
+
+.contact-info h2{
+font-size:36px;
+}
+
+iframe{
+height:250px;
+}
+
+footer section{
+grid-template-columns:1fr !important;
+text-align:center;
+}
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:480px){
+
+.hero-text h1{
+font-size:42px;
+}
+
+.logo{
+font-size:24px;
+}
+
+.btn{
+width:100%;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.stats{
+grid-template-columns:1fr 1fr;
+}
+
+.stat-box h2{
+font-size:28px;
+}
+
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="luxury-bg"></div>
+<div class="luxury-bg2"></div>
+<div class="luxury-glow"></div>
+<!-- NAV -->
+
+<nav>
+
+<div class="logo">
+Honey <span>Travels</span>
+</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#carsSection">Cars</a>
+<a href="#feedback">Feedback</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+<div class="headlight left-light"></div>
+<div class="headlight right-light"></div>
+<div class="hero-text">
+
+    
+
+<div class="tag">
+PREMIUM RENTAL EXPERIENCE
+</div>
+
+<h1>
+Premium Car Rentals in <span>Kadapa</span>
+
+</h1>
+
+<p class="hero-desc">
+Luxury car rentals for weddings,
+airport pickup, VIP travel,
+photoshoots and unforgettable
+premium road trips with stylish
+comfort and luxury experience.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#carsSection" class="btn btn1">
+    Book A Ride
+</a>
+
+<a href="#contact" class="btn btn2">
+Contact Us
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="">
+
+</div>
+
+</section>
+
+<div style="text-align:center; padding:40px 7%; background:#ffffff;">
+
+  <h2 style="font-size:34px; font-weight:800; color:#0f172a; margin-bottom:15px;">
+    Welcome to Honey Travels
+  </h2>
+
+  <p style="font-size:16px; color:#475569; line-height:2; max-width:700px; margin:auto;">
+    Premium luxury cars for weddings, VIP travel and airport pickup.<br>
+    Fast booking, trusted service and smooth rides.<br>
+    Experience comfort, safety and luxury in every journey.
+  </p>
+
+</div>
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat-box">
+<h2>240</h2>
+<p>Cars Rented</p>
+</div>
+
+<div class="stat-box">
+<h2>235</h2>
+<p>Satisfied Clients</p>
+</div>
+
+<div class="stat-box">
+<h2>1+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat-box">
+<h2>10+</h2>
+<p>Car Types</p>
+</div>
+
+<div class="stat-box">
+<h2>4.9★</h2>
+<p>Customer Rating</p>
+</div>
+
+</section>
+
+<h2 class="section-title">Book Your Cars</h2>
+<p class="section-sub">Choose your favorite luxury car and book instantly</p>
+
+<section id="carsSection" class="section">
+
+ 
+  <div class="cars">
+
+<!-- CAR 1 -->
+<div class="card">
+  <div class="price">₹4999 / Day</div>
+
+  <img src="c:\Users\ssaka\Downloads\car1.jpeg"onclick="openGallery(1)">
+
+  <div class="card-content">
+    <h3>Maruthi Suzuki Brezza</h3>
+    <p>Maruti Suzuki Brezza is a stylish and fuel-efficient compact SUV.
+It offers comfortable seating, smooth driving, and modern features for city and highway travel.</p>
+
+    <div class="car-info">
+      <span>👤 5 Seats</span>
+      <span>⚡ Automatic</span>
+    </div>
+
+<button class="book-btn" onclick="bookCar('brezza')">
+Book Now
+</button>
+      
+  </div>
+</div>
+
+<!-- CAR 2 -->
+<div class="card">`
+  <div class="price">₹3999 / Day</div>
+
+  <img src="c:\Users\ssaka\Downloads\car2.webp"onclick="openGallery(2)">
+
+  <div class="card-content">
+    <h3>Toyata Taisor</h3>
+    <p>Toyota Taisor is a stylish compact SUV with modern design and advanced features.
+It offers smooth performance, great mileage, and comfortable driving experience.</p>
+
+    <div class="car-info">
+      <span>👤 5 Seats</span>
+      <span>⚡ Automatic</span>
+    </div>
+
+    <button class="book-btn" onclick="bookCar('Toyata Taisor')">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- CAR 3 -->
+<div class="card">
+  <div class="price">₹6999 / Day</div>
+
+  <img src="c:\Users\ssaka\Downloads\car3.avif" onclick="openGallery(3)">
+
+  <div class="card-content">
+    <h3>Toyata Innova</h3>
+    <p>Toyota Innova is one of the most reliable and comfortable family MPVs in India.
+It offers spacious seating, smooth long-distance travel, and powerful performance.</p>
+
+    <div class="car-info">
+      <span>👤 7/8 Seats</span>
+      <span>⚡ Automatic</span>
+    </div>
+
+    <button class="book-btn" onclick="bookCar('Toyata Innova')">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- CAR 4 -->
+<div class="card">
+  <div class="price">₹5999 / Day</div>
+
+  <img src="c:\Users\ssaka\Downloads\car4.jpeg"onclick="openGallery(4)">
+
+  <div class="card-content">
+    <h3>Maruti Suzuki Swift</h3>
+    <p>Maruti Suzuki Swift is a stylish and sporty hatchback loved for its mileage and smooth performance.
+It offers easy driving, comfortable interiors, and low maintenance cost.</p>
+
+    <div class="car-info">
+      <span>👤 5 Seats</span>
+      <span>⚡ Automatic</span>
+    </div>
+
+    <button class="book-btn" onclick="bookCar('Maruti Suzuki Swift')">
+      Book Now
+    </button>
+  </div>
+</div>
+
+<!-- CAR 5 -->
+<div class="card">
+  <div class="price">₹2999 / Day</div>
+
+  <img src="c:\Users\ssaka\Downloads\car5.jpg"onclick="openGallery(5)">
+
+  <div class="card-content">
+    <h3>Toyota Etios</h3>
+    <p>Toyota Etios is a reliable and fuel-efficient sedan known for its smooth performance and durability.
+It offers spacious interiors, comfortable seating, and low maintenance cost.</p>
+
+    <div class="car-info">
+      <span>👤 5 Seats</span>
+      <span>⚡ Manual</span>
+    </div>
+
+    <button class="book-btn" onclick="bookCar('Toyota Etios')">
+      Book Now
+    </button>
+  </div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FEEDBACK -->
+
+<section class="section" id="feedback">
+
+<h2 class="section-title">
+Customer Ratings & Feedback
+</h2>
+
+<p class="section-sub">
+What our happy customers say about us
+</p>
+
+<div class="feedback-container"
+id="feedbackContainer">
+
+<div class="feedback-card">
+
+<button class="menu-btn">⋮</button>
+
+<div class="menu-box">
+<button onclick="deleteFeedback(this)">
+Delete
+</button>
+</div>
+
+<h3>★★★★★</h3>
+
+<p>
+Best luxury rental service.
+Cars are very clean and stylish.
+</p>
+
+<h4>
+- Ramesh
+</h4>
+
+</div>
+
+</div>
+
+<!-- FORM -->
+
+<div class="feedback-form">
+
+<h2 style="margin-bottom:25px;">
+Post Your Feedback
+</h2>
+
+<form id="feedbackForm">
+
+<input type="text"
+id="userName"
+placeholder="Enter Your Name">
+
+<div class="star-rating"
+id="starRating">
+
+<span data-value="1">★</span>
+<span data-value="2">★</span>
+<span data-value="3">★</span>
+<span data-value="4">★</span>
+<span data-value="5">★</span>
+
+</div>
+
+<textarea
+id="feedbackText"
+placeholder="Write your feedback"></textarea>
+
+<button type="submit"
+class="btn btn1">
+Post Feedback
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="contact-box">
+
+<div class="contact-info">
+
+<h2>
+Contact Us
+</h2>
+
+<p>
+<i class="fas fa-phone"></i>
++91 7995439913
+</p>
+
+<p>
+<i class="fas fa-location-dot"></i>
+Kadapa, Andhra Pradesh
+</p>
+
+<p>
+<i class="fas fa-envelope"></i>
+honeycars@gmail.com
+</p>
+
+<p>
+<i class="fas fa-car"></i>
+25+ Premium Cars Available
+</p>
+
+<p>
+<i class="fas fa-star"></i>
+4.9 Customer Ratings
+</p>
+
+</div>
+
+<div>
+
+<iframe
+src="https://maps.google.com/maps?q=Kadapa&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+    <!-- EXTRA FOOTER SECTION -->
+<section style="background:#0f172a; color:white; padding:60px 7%; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px;">
+
+  <!-- ABOUT -->
+  <div>
+    <h3>Honey Car Rents</h3>
+    <p style="color:#cbd5e1; line-height:1.8; margin-top:10px;">
+      Premium luxury car rental service in Kadapa.<br>
+      Fast booking, trusted drivers and best prices.
+    </p>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div>
+    <h3>Quick Links</h3>
+    <p style="color:#cbd5e1; margin-top:10px; line-height:2;">
+      Home<br>
+      Cars<br>
+      Feedback<br>
+      Contact
+    </p>
+  </div>
+
+  <!-- CONTACT -->
+  <div>
+    <h3>Contact</h3>
+    <p style="color:#cbd5e1; margin-top:10px; line-height:2;">
+      📞 +91 7995439913<br>
+      📧 honeycars@gmail.com<br>
+      📍 Kadapa, Andhra Pradesh
+    </p>
+  </div>
+
+  <!-- APP / SOCIAL -->
+  <div>
+    <h3>Download App</h3>
+    <p style="color:#cbd5e1; margin-top:10px;">
+      Book faster on mobile
+    </p>
+
+    <button style="margin-top:10px; padding:10px 15px; border:none; border-radius:8px; background:#ff9800; color:white; cursor:pointer;">
+      Google Play
+    </button>
+
+    <button style="margin-top:10px; padding:10px 15px; border:none; border-radius:8px; background:#2563eb; color:white; cursor:pointer;">
+      App Store
+    </button>
+  </div>
+
+</section>
+
+<!-- COPYRIGHT -->
+<div style="background:#020617; color:#94a3b8; text-align:center; padding:15px;">
+  © 2026 Honey Car Rentals • All Rights Reserved
+</div>
+
+
+</footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+let selectedRating = 5;
+
+const stars =
+document.querySelectorAll(
+'#starRating span'
+);
+
+stars.forEach((star,index)=>{
+
+star.addEventListener('click',()=>{
+
+selectedRating = index + 1;
+
+stars.forEach((s,i)=>{
+
+if(i < selectedRating){
+
+s.classList.add('active');
+
+}else{
+
+s.classList.remove('active');
+
+}
+
+});
+
+});
+
+});
+
+/* LOAD */
+
+
+/* POST */
+
+document
+.getElementById('feedbackForm')
+
+.addEventListener('submit',function(e){
+
+e.preventDefault();
+
+const name =
+document.getElementById('userName').value;
+
+const feedback =
+document.getElementById('feedbackText').value;
+
+if(name==='' || feedback===''){
+
+alert('Fill all details');
+
+return;
+
+}
+
+createFeedback(
+name,
+feedback,
+selectedRating
+);
+
+saveFeedback(
+name,
+feedback,
+selectedRating
+);
+
+this.reset();
+
+});
+
+/* CREATE */
+
+function createFeedback(name,feedback,rating){
+
+let stars='';
+
+for(let i=0;i<rating;i++){
+
+stars += '★';
+
+}
+
+const card =
+document.createElement('div');
+
+card.className='feedback-card';
+
+card.innerHTML=`
+
+<button class="menu-btn">⋮</button>
+
+<div class="menu-box">
+<button onclick="deleteFeedback(this)">
+Delete
+</button>
+</div>
+
+<h3>${stars}</h3>
+
+<p>
+"${feedback}"
+</p>
+
+<h4>
+- ${name}
+</h4>
+
+`;
+
+document
+.getElementById('feedbackContainer')
+.appendChild(card);
+
+card.querySelector('.menu-btn')
+
+.addEventListener('click',()=>{
+
+card.classList.toggle('active');
+
+});
+
+}
+
+/* DELETE */
+
+function deleteFeedback(btn){
+
+const card =
+btn.closest('.feedback-card');
+
+const name =
+card.querySelector('h4').innerText;
+
+card.remove();
+
+
+
+}
+
+</script>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+getFirestore,
+collection,
+addDoc,
+getDocs,
+deleteDoc,
+doc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD2047R_1TjHU1R7WZtzjHvxQXngce8nWk",
+  authDomain: "honey-car-rentals.firebaseapp.com",
+  projectId: "honey-car-rentals",
+  storageBucket: "honey-car-rentals.firebasestorage.app",
+  messagingSenderId: "789836314842",
+  appId: "1:789836314842:web:fae9ce1c3f63a01ab80de3",
+  measurementId: "G-ZSTZY5K3P8"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+async function saveFeedback(name, feedback, rating){
+async function loadFeedbacks(){
+
+const querySnapshot =
+await getDocs(
+collection(db, "feedbacks")
+);
+
+querySnapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+createFeedback(
+data.name,
+data.feedback,
+data.rating
+);
+
+});
+
+}loadFeedbacks();
+await addDoc(
+collection(db, "feedbacks"),
+{
+name: name,
+feedback: feedback,
+rating: rating,
+createdAt: Date.now()
+}
+);
+
+}
+
+console.log("Firebase Connected Successfully");
+saveFeedback(
+"Test User",
+"Firebase Testing",
+5
+);
+</script>
+</body>
+</html>
+
+<!-- your HTML content ends here -->
+
+<script>
+function bookCar(carName){
+
+let phone = "7075754717";
+
+let message = "Hello Honey Car Rents,👋 I want to book a car: " + carName;
+
+let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+
+}
+</script>
+<!-- ======== ADD THIS FULL CODE ABOVE </body> ======== -->
+
+<!-- GALLERY POPUP -->
+
+<div class="gallery-popup" id="galleryPopup">
+
+<span class="close-gallery" onclick="closeGallery()">
+×
+</span>
+
+<img id="galleryImage" src="">
+
+<div class="gallery-buttons">
+
+<button onclick="prevImage()">
+⬅ Prev
+</button>
+
+<button onclick="nextImage()">
+Next ➡
+</button>
+
+</div>
+
+</div>
+
+<style>
+
+/* ===== GALLERY POPUP ===== */
+
+.gallery-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+z-index:99999;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+animation:fadeIn 0.4s ease;
+}
+
+.gallery-popup img{
+width:90%;
+max-width:900px;
+height:520px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+animation:zoomIn 0.4s ease;
+}
+
+.gallery-buttons{
+margin-top:25px;
+display:flex;
+gap:20px;
+}
+
+.gallery-buttons button{
+padding:14px 25px;
+border:none;
+border-radius:12px;
+background:#ff9800;
+color:white;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery-buttons button:hover{
+background:#2563eb;
+transform:scale(1.05);
+}
+
+.close-gallery{
+position:absolute;
+top:20px;
+right:35px;
+font-size:45px;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+@keyframes zoomIn{
+from{
+transform:scale(0.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+@media(max-width:768px){
+
+.gallery-popup img{
+height:300px;
+}
+
+.gallery-buttons button{
+font-size:15px;
+padding:12px 18px;
+}
+
+}
+
+</style>
+
+<script>
+
+/* ===== CAR GALLERY ===== */
+
+const galleries = {
+
+1:[
+"images/car1-1.jpeg",
+"images/car1-2.jpeg",
+"images/car1-3.jpeg",
+"images/car1-4.jpeg"
+],
+
+2:[
+"images/car2-1.jpeg",
+"images/car2-2.jpeg",
+"images/car2-3.jpeg",
+"images/car2-4.jpeg"
+],
+
+3:[
+"images/car3-1.jpeg",
+"images/car3-2.jpeg",
+"images/car3-3.jpeg",
+"images/car3-4.jpeg"
+],
+
+4:[
+"images/car4-1.jpeg",
+"images/car4-2.jpeg",
+"images/car4-3.jpeg",
+"images/car4-4.jpeg"
+],
+
+5:[
+"images/car5-1.jpeg",
+"images/car5-2.jpeg",
+"images/car5-3.jpeg",
+"images/car5-4.jpeg"
+]
+
+};
+
+let currentGallery = [];
+let currentIndex = 0;
+
+function openGallery(carNumber){
+
+currentGallery = galleries[carNumber];
+
+currentIndex = 0;
+
+document.getElementById("galleryPopup").style.display = "flex";
+
+document.getElementById("galleryImage").src =
+currentGallery[currentIndex];
+
+}
+
+function closeGallery(){
+
+document.getElementById("galleryPopup").style.display = "none";
+
+}
+
+function nextImage(){
+
+currentIndex++;
+
+if(currentIndex >= currentGallery.length){
+
+currentIndex = 0;
+
+}
+
+document.getElementById("galleryImage").src =
+currentGallery[currentIndex];
+
+}
+
+function prevImage(){
+
+currentIndex--;
+
+if(currentIndex < 0){
+
+currentIndex = currentGallery.length - 1;
+
+}
+
+document.getElementById("galleryImage").src =
+currentGallery[currentIndex];
+
+}
+
+</script>
+</body>
+</html>
